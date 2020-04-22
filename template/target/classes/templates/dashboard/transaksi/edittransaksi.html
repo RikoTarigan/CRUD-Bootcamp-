@@ -1,0 +1,54 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+	
+<body>
+	<section layout:fragment="header">
+		<h1 th:text="${title}"></h1>
+		
+	</section>
+	<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+	<div layout:fragment="content">
+		<div class="box box-success">
+			<div class="row">
+				<div class="col-xs-12">
+					<div>
+			            <div class="box-body">
+			            <form th:object="${transaksi}" method="POST" th:action="@{transaksi-save}">
+			              <div class="row">
+			                <div class="col-xs-4">
+			                <label>trCode</label>
+			                  <input type="text" class="form-control" readonly placeholder="trCode" th:field="*{trCode}">
+			                </div>
+			                <div class="col-xs-4">
+			                <label>trDate</label>
+			                  <input type="date" class="form-control" placeholder="trDate" th:field="*{trDate}">
+			                </div>
+			              </div>
+			              <br>
+			              <div class="row">
+			                <div class="col-xs-4">
+			                <label>custName</label>
+			                  <input type="text" class="form-control" placeholder="custName" th:field="*{custName}">
+			                </div>
+			                <div class="col-xs-4">
+			                <label>totalAmout</label>
+			                  <input type="number" class="form-control" placeholder="totalAmout" th:field="*{totalAmout}">
+			                </div>
+			              </div>
+			              <br>
+			              <button type="submit" class="btn btn-primary">Simpan</button>
+			              <a th:href="@{Transaction}" class="btn btn-default">Cancel</a>
+			              </form>
+			            </div>
+			            <!-- /.box-body -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

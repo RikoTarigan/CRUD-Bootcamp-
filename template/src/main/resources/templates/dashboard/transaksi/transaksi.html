@@ -1,0 +1,83 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<body>
+	<section layout:fragment="header">
+		<h1 th:text="${title}"></h1>
+		
+	</section>
+	<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+    	
+    </section>
+	<div layout:fragment="content">
+		<div class="box box-success">
+			<div class="row">
+				<div class="col-xs-12">
+					<!-- KONTEN -->
+				      <div class="row">
+				        <div class="col-xs-12">
+				          <div class="box">
+				            <div class="box-header">
+				              <div class="box-body">
+					              <div class="row">
+					                <div class="col-xs-3">
+					                  <a  class="btn btn-primary" th:href="@{tambah-tr}">Tambah Transaksi</a>
+					                </div>
+					                <div class="col-xs-4 pull-right">
+								        <div class="input-group">
+								          <input type="text" name="query" class="txtSearch form-control" placeholder="Search..." id="txtSearch">
+								              <span class="input-group-btn">
+								                <a name="search" id="search-btn" class="btn btn-primary"><i class="fa fa-search"></i>
+								                </a>
+								              </span>
+								        </div>
+					                </div>
+					              </div>
+					            </div>
+				            </div>
+				           
+				            
+				            <!-- /.box-header -->
+				            <div class="box-body">
+				             <div th:attr="class=${notif}">
+				           	 	<span th:text="${flag}"></span>
+				            </div>
+				              <table id="tblSearch" class="table table-bordered table-hover">
+				                <thead>
+				                <tr>
+				                  <th>trCode</th>
+				                  <th>trDate</th>
+				                  <th>custName</th>
+				                  <th>totalAmout</th>
+				                  <th>Action</th>
+				                </tr>
+				                </thead>
+				                <tbody>
+				                <tr th:each="transaksi : ${transaction}">
+				                  <td th:text="${transaksi.trCode}"></td>
+				                  <td th:text="${transaksi.trDate}"></td>
+				                  <td th:text="${transaksi.custName}"></td>
+				                  <td th:text="${transaksi.totalAmout}"></td>
+				                  <td>
+				                  	<a class="btn btn-danger" th:href="@{/transaksi-delete(id=${transaksi.trCode})}">hapus</a>
+				                  	<a class="btn btn-warning" th:href="@{/transaksi-edit(id=${transaksi.trCode})}">edit</a>
+				                  </td>
+				                </tr>
+				                
+				              </table>
+				            </div>
+				          </div>
+				          </div>
+				        </div>
+					<!-- END KONTEN -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

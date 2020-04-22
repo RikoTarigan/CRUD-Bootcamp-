@@ -1,0 +1,14 @@
+com\grit\template\repositories\UserRepository.class
+com\grit\template\models\User.class
+com\grit\template\TemplateApplication.class
+com\grit\template\services\UserService.class
+com\grit\template\config\WebSecurityConfig.class
+com\grit\template\config\CustomUserDetailService.class
+com\grit\template\controllers\DashboardController.class
+com\grit\template\repositories\UserRoleRepository.class
+com\grit\template\models\UserRole.class
+com\grit\template\ServletInitializer.class
+com\grit\template\services\UserRoleService.class
+com\grit\template\models\UserAcces.class
+com\grit\template\repositories\UserAccesRepository.class
+com\grit\template\services\UserAccesService.class

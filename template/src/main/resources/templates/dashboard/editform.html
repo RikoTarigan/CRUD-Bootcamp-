@@ -1,0 +1,57 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+	
+<body>
+	<section layout:fragment="header">
+		<h1 th:text="${title}"></h1>
+		
+	</section>
+	<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      
+    </section>
+	<div layout:fragment="content">
+		<div class="box box-success">
+			<div class="row">
+				<div class="col-xs-12">
+					<div>
+			            <div class="box-body">
+			            <form th:object="${product}" method="POST" th:action="@{/editproduct}">
+			              <div class="row">
+			                <div class="col-xs-4">
+			                <label>productCode</label>
+			                  <input type="text" class="form-control" placeholder="productCode" th:field="*{productCode}">
+			                </div>
+			                <div class="col-xs-4">
+			                <label>productType</label>
+			                  <input type="text" class="form-control" placeholder="productType" th:field="*{productType}">
+			                </div>
+			              </div>
+			              <br>
+			              <div class="row">
+			                <div class="col-xs-4">
+			                <label>productName</label>
+			                  <input type="text" class="form-control" placeholder="productName" th:field="*{productName}">
+			                </div>
+			                <div class="col-xs-4">
+			                <label>price</label>
+			                  <input type="number" class="form-control" placeholder="price" th:field="*{price}">
+			                </div>
+			              </div>
+			              <br>
+			              <button type="submit" class="btn btn-primary">Simpan</button>
+			              <a th:href="@{Product}" class="btn btn-default">Cancel</a>
+			              </form>
+			            </div>
+			            <!-- /.box-body -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

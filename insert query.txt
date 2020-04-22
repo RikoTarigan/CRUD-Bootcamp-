@@ -1,0 +1,37 @@
+-- Aplication JS Doesn't work on Chrome
+-- 'riko' -> '$2a$10$xCuvgI8E7LkaQle8DupCJubggU3Tf7ItE0zKHY/.V58z7eDmuYEKG'
+-- INSERT USER
+insert into users
+(user_name,user_first_name,user_is_active,user_last_name,user_password,user_phone)
+values
+('ADMIN123','admin',true,'admin','$2a$10$xCuvgI8E7LkaQle8DupCJubggU3Tf7ItE0zKHY/.V58z7eDmuYEKG','192381'),
+('USER123','riko',true,'tarigan','$2a$10$xCuvgI8E7LkaQle8DupCJubggU3Tf7ItE0zKHY/.V58z7eDmuYEKG','081231312123'),
+('USER124','Putri',true,'Situmeang','$2a$10$xCuvgI8E7LkaQle8DupCJubggU3Tf7ItE0zKHY/.V58z7eDmuYEKG','081231312123'),
+('USER125','Kartini',true,'Simbolon','$2a$10$xCuvgI8E7LkaQle8DupCJubggU3Tf7ItE0zKHY/.V58z7eDmuYEKG','081231312123'),
+('USER126','Raden',true,'Simanjuntak','$2a$10$xCuvgI8E7LkaQle8DupCJubggU3Tf7ItE0zKHY/.V58z7eDmuYEKG','081231312123'),
+('USER127','Bill Gates',true,'Simatupang','$2a$10$xCuvgI8E7LkaQle8DupCJubggU3Tf7ItE0zKHY/.V58z7eDmuYEKG','081231312123'),
+
+-- INSERT USER_ROLE
+insert into user_role
+(user_role_id,user_name,user_role_desc)
+values
+('U125','USER123','CUSTOMER'),
+('A126','ADMIN123','ADMIN'),
+('A127','USER124','CUSTOMER'),
+('A128','USER125','CUSTOMER'),
+('A129','USER127','CUSTOMER'),
+('A130','USER128','CUSTOMER')
+
+-- INSERT INTO USER_ACCES
+select * from user_acces
+insert into user_acces
+(user_acces_id,categori,user_acces_desc,user_role_id)
+values
+('17','Grit','Product','CUSTOMER'),
+('14','Grit','Product','USER'),
+('15','Grit','Product','ADMIN'),
+('16','Grit','Transaction','ADMIN')
+
+
+
+ 

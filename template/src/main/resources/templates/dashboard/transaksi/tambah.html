@@ -1,0 +1,127 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+	
+<body>
+	<section layout:fragment="header">
+		<h1 th:text="${title}"></h1>
+		
+	</section>
+	<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      
+    </section>
+	<div layout:fragment="content">
+		<div class="box box-success">
+			<div class="row">
+				<div class="col-xs-12">
+					<div>
+			            <form  method="POST" th:object="${transaksi}" th:action="@{transaksi-save}">
+			            <div class="box-body">
+			              <div class="row">
+			                <div class="col-xs-2">
+			                <label>trCode</label>
+			                  <input readonly type="text"  th:value="${trCode}" class="form-control">
+			                </div>
+			              </div>
+			              <br>
+			              <div class="row">
+			              <div class="form-group">
+			                <div class="col-xs-2">
+				                <label>custCode</label>
+			                  <select class="form-control select2" th:value="*{custName}" id="custCode">
+			                  
+				                  	<option>Choose Customer Code</option>
+				                   <option th:each="i : ${Customer}" th:value="${i.userFirstName}" th:with="var=${i.userFirstName}" th:text="${i.userName}">
+    								</option>
+				                </select>
+			                </div>
+			                <div class="col-xs-2">
+			                	<label>custName</label>
+			                  <input type="text" readonly class="form-control" id="cusname" th:field="*{custName}">
+			                </div>
+			                
+			                <div class="col-xs-2">
+			                	<label>Total Amount</label>
+			                	<!-- <br>
+			                	<label>Rp.</label><span id="Amount">0</span> -->
+			                  	<input id="totAm" type="number" readonly class="form-control" value=0 th:field="*{totalAmout}">
+			                
+			                </div>
+			                
+			                </div>
+			              </div>
+			              <div><br></div>
+			              <button id="btnAddRow" type="button" class="btn btn-primary">Tambah Produk</button>
+			            </div>
+			            <!-- /.box-body -->
+			         <!-- VIEW DATA -->
+					<div>
+				      <div class="row">
+				        <div class="col-xs-12">
+				          <div class="box">
+				            <div class="box-header">
+				              <!-- <h3 class="box-title">Hover Data Table</h3> -->
+				            </div>
+				            <!-- /.box-header -->
+				            <div class="box-body">
+				              <table id="tblAddRow" class="table table-bordered table-hover">
+				                <thead>
+				                <tr>
+				                  <th>productCode</th>
+				                  <th>productName</th>
+				                  <th>Price</th>
+				                  <th>Quantity</th>
+				                  <th>Total</th>
+				                  <th>Action</th>
+				                </tr>
+				                </thead>
+				                <tbody class="trans">
+				                <tr>
+				                	<td>
+				                		<select class="form-control produk"  id="product" >
+				                  		<option>Choose Product Code</option>
+				                   		<option  th:each="i : ${product}" th:value="${i.productName} + '/'+${i.price}" th:text="${i.productCode}">
+    									</option>
+				                		</select>
+				                	</td>
+					                  <td><span id="productname"></span></td>
+					                  <td><input type="number" class="form-control" readonly id="price" value=0></td>
+					                  <td><input type="number" value=0 id="qty" min=0></td>
+					                  <td><span id="total" class="totalAmount">0</span></td>	
+					                                  
+				                </tr>
+				                 <!-- <tr>
+				                  <td>
+				                  	<select class="form-control"  id="product">
+				                	</select>
+				                	</td>
+				                  <td><span id="productname"></span></td>
+				                  <td><input type="number" class="form-control" readonly id="price" value=0></td>
+				                  <td><input type="number" value=0 id="qty" min=0></td>
+				                  <td class="totalAmount"><span id="total">0</span></td>		                  
+				                </tr> -->
+				                
+				                
+				                
+				              </table>
+				              	<button type="submit" class="btn btn-primary">Simpan</button>
+				   			    <a th:href="@{Transaction}" class="btn btn-default">Cancel</a>
+				   			    
+				            </div>
+				          </div>
+				          </div>
+				        </div>
+				      </div>
+				      </form>
+					<!-- END VIEW DATA -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

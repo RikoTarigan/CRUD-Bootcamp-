@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<body>
+	<section layout:fragment="header">
+		<h1>Selamat Datang, <span th:text="${userName}"></span></h1>
+	</section>
+	<div layout:fragment="content">  
+     	<div class=" col-xs-1" th:each="menu : ${menu}">
+     	 	<a class="btn btn-primary" th:href="@{${menu.user_acces_desc} }" th:text="${menu.user_acces_desc}"><i class="fa fa-circle-o"></i>Product</a>
+		</div>
+	</div>
+</body>
+</html>

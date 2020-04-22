@@ -1,0 +1,1 @@
+alert("Hello! I am Javascript!! (Each js file should be inside this fragment)");

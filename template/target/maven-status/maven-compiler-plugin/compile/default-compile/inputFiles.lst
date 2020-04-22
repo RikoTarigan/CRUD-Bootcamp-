@@ -1,0 +1,14 @@
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\models\UserRole.java
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\repositories\UserRepository.java
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\TemplateApplication.java
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\services\UserRoleService.java
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\controllers\DashboardController.java
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\repositories\UserAccesRepository.java
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\services\UserAccesService.java
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\models\User.java
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\ServletInitializer.java
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\models\UserAcces.java
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\repositories\UserRoleRepository.java
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\config\WebSecurityConfig.java
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\services\UserService.java
+E:\BootCamp\Final Project\template\src\main\java\com\grit\template\config\CustomUserDetailService.java
